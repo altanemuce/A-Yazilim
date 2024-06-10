@@ -1,0 +1,44 @@
+﻿$(document).ready(function () {
+    $('#register').submit(function (event) {
+        event.preventDefault();
+
+        var formData = {
+            userName: $('#userName').val(),
+            email: $('#email').val(),
+            password: $('#password').val()
+            // Diğer gerekli alanları buraya ekleyin
+
+        };
+
+        $.ajax({
+            type: 'POST',
+            async: true,
+            url: 'https://localhost:7164/api/Auths/register',
+            data: JSON.stringify(formData),
+            contentType: 'application/json',
+            success: function (data) {
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Kayıt Başarılı',
+                    text: 'Hesabınız oluşturulmuştur. Giriş Yapabilirsiniz.',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didClose: () => {
+                        window.location.href = '/login';
+                    }
+                });
+
+            },
+            error: function (xhr, status, error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'kayıt başarısız',
+                    text: 'Kayıt işlemi sırasında bir hata oluştu',
+                    confirmButtonText: 'Tamam'
+                })
+            }
+        });
+    });
+});

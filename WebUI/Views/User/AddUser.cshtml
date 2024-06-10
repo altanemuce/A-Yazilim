@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "AddUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-body">
+    <!-- row -->
+   
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body p-0">
+                        <div class="table-responsive active-projects style-1">
+                            <div class="tbl-caption">
+                                <h4 class="heading mb-0">Kullanıcılar</h4>
+                               
+                            </div>
+                            <table id="empoloyees-tblwrapper" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Kullanıcı ID</th>
+                                        <th>Kullanıcı İsmi</th>
+                                        <th>Kullanıcı Email</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--**********************************
+    Content body end
+***********************************-->
+
+
+
+<div class="offcanvas offcanvas-end customeoff" tabindex="-1" id="offcanvasExample">
+    <div class="offcanvas-header">
+        <h5 class="modal-title" id="#gridSystemModal">Add Employee</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="container-fluid">
+
+            <form id="addUser">
+                <div class="row">
+
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput2" class="form-label">Kullanıcı İsmi<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="userName" name="userName" placeholder="">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput3" class="form-label">Kullanıcı Email<span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput4" class="form-label">Kullanıcı Şifresi<span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="">
+                    </div>
+
+
+                </div>
+                <div>
+
+                    <button class="btn btn-primary me-1">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script src="~/panel/jquery/ListUser.js"></script>
+    <script src="~/panel/jquery/AddUser.js"></script>
+}
